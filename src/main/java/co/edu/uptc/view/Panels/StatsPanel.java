@@ -13,12 +13,13 @@ public class StatsPanel extends JPanel {
         this.add(new JLabel("Estadísticas"));
         this.setLayout(null);
         addBackButton(cardLayout, mainPanel);
+        addTitle();
     }
 
     private void addBackButton(CardLayout cardLayout, JPanel mainPanel) {
         ImageIcon backIcon = new ImageIcon(getClass().getResource("/back.png"));
         JLabel backButton = new JLabel(backIcon);
-        backButton.setBounds(16, 10, backIcon.getIconWidth(), backIcon.getIconHeight());
+        backButton.setBounds(16, 16, backIcon.getIconWidth(), backIcon.getIconHeight());
         backButton.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -38,4 +39,13 @@ public class StatsPanel extends JPanel {
         });
         this.add(backButton);
     }
+
+    private void addTitle() {
+        JLabel title = new JLabel("Estadísticas");
+        title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 50));
+        title.setForeground(Color.WHITE);
+        title.setBounds(81, 10, 289, 60);
+        this.add(title);
+    }
+
 }

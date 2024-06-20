@@ -13,12 +13,13 @@ public class ConfigurationPanel extends JPanel {
         this.setBackground(Global.BACKGROUND);
         this.add(new JLabel("Configuración"));
         addBackButton(cardLayout, mainPanel);
+        addTitle();
     }
 
     private void addBackButton(CardLayout cardLayout, JPanel mainPanel) {
         ImageIcon backIcon = new ImageIcon(getClass().getResource("/back.png"));
         JLabel backButton = new JLabel(backIcon);
-        backButton.setBounds(16, 10, backIcon.getIconWidth(), backIcon.getIconHeight());
+        backButton.setBounds(16, 17, backIcon.getIconWidth(), backIcon.getIconHeight());
         backButton.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -37,5 +38,13 @@ public class ConfigurationPanel extends JPanel {
             }
         });
         this.add(backButton);
+    }
+
+    private void addTitle() {
+        JLabel title = new JLabel("Configuración");
+        title.setFont(new Font(title.getFont().getName(), Font.PLAIN, 45));
+        title.setForeground(Color.WHITE);
+        title.setBounds(81, 10, 289, 60);
+        this.add(title);
     }
 }
